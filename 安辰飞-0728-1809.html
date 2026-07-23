@@ -496,6 +496,36 @@
   .day-tag.green { background: #EEF5EF; color: #3D7A4A; }
   .day-tag.yellow { background: #FBF5E3; color: #9E7A2A; }
 
+  /* 行程目录（可点击锚点导航） */
+  .day-toc {
+    background: var(--pure-white);
+    border: 1px solid #EDE8DF;
+    border-left: 3px solid var(--copper-gold);
+    border-radius: 10px;
+    padding: 18px 22px; margin-bottom: 28px;
+  }
+  .toc-title {
+    font-family: var(--font-cn);
+    font-size: 13px; font-weight: 700; color: var(--deep-teal);
+    letter-spacing: 1px; margin-bottom: 12px;
+  }
+  .day-toc .toc-link {
+    display: block;
+    font-family: var(--font-cn);
+    font-size: 13px; line-height: 1.9;
+    color: #5A5246; text-decoration: none;
+    padding: 2px 0;
+    border-bottom: 1px dashed transparent;
+    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+  }
+  .day-toc .toc-link:hover {
+    color: var(--deep-teal);
+    border-bottom-color: var(--copper-gold);
+    padding-left: 6px;
+  }
+  /* 锚点跳转落点留白，避免贴顶 */
+  .day-card { scroll-margin-top: 24px; }
+
   .day-title {
     font-size: 17px; font-weight: 500; color: var(--deep-teal);
     margin-bottom: 10px; letter-spacing: 1px;
@@ -867,7 +897,7 @@
       </div>
       <div class="think-card reveal reveal-right stagger-5" style="background:var(--pure-white); border-left-color: var(--copper-gold);">
         <div class="think-label">旅行偏好</div>
-        <div class="think-text">轻松不累 · 人均预算约不限</div>
+        <div class="think-text">C.性价比 · 人均预算约不限</div>
       </div>
     </div>
   </div>
@@ -894,42 +924,52 @@
     <div class="sec-divider"></div>
 
     <div class="timeline">
-      <div class="day-card reveal reveal-up stagger-1">
+    <nav class="day-toc reveal reveal-up">
+      <div class="toc-title">📑 行程目录（点击直达当天）</div>
+      <a class="toc-link" href="#day-1">D1 · 接站日</a>
+      <a class="toc-link" href="#day-2">D2 · 云冈慢读日</a>
+      <a class="toc-link" href="#day-3">D3 · 木塔+悬空寺日 + 跨城转场日</a>
+      <a class="toc-link" href="#day-4">D4 · 晋祠深度日 + 跨城转场日</a>
+      <a class="toc-link" href="#day-5">D5 · 八泉峡自然日</a>
+      <a class="toc-link" href="#day-6">D6 · 虹霓村古村落日 + 送站日</a>
+    </nav>
+
+      <div class="day-card reveal reveal-up stagger-1" id="day-1">
         <div class="day-tag green">D1 · 7月28日 周二</div>
         <div class="day-title">接站日</div>
         <div class="day-desc">抵达大同，入住酒店。傍晚根据体力灵活安排古城墙散步或直接休息。今日以适应当地气候、调整旅行状态为主。</div>
         <div class="day-rhythm">轻松级 | 0核心景点 | 不赶路</div>
       </div>
 
-      <div class="day-card reveal reveal-up stagger-2">
+      <div class="day-card reveal reveal-up stagger-2" id="day-2">
         <div class="day-tag yellow">D2 · 7月29日 周三</div>
         <div class="day-title">云冈慢读日</div>
         <div class="day-desc">早餐后前往云冈石窟，预留3小时完成核心洞窟参观，可配专家分段讲解（自选，按需加购）。下午返回酒店休息，傍晚可古城自由漫步。云冈实行实名分时预约，需提前预约。全程平路，设中途休息点。 孩子可跟随讲解观察造像细节，家长适当引导互动。</div>
         <div class="day-rhythm">中等偏轻 | 1核心景点 | 专家讲解(自选)+耳麦</div>
       </div>
 
-      <div class="day-card reveal reveal-up stagger-3">
+      <div class="day-card reveal reveal-up stagger-3" id="day-3">
         <div class="day-tag yellow">D3 · 7月30日 周四</div>
         <div class="day-title">木塔+悬空寺日 + 跨城转场日</div>
         <div class="day-desc">早餐后出发前往应县木塔，外观+一层平地参观，完成古建观察。午间转场浑源，悬空寺远观拍照（不登临）。下午返回大同。木塔以平地观察为主，不安排攀爬。 领队引导孩子观察木塔斗拱结构，了解古代建筑智慧。 专车跨城接送，前往下一目的地。途中安排服务区休息，抵达后入住酒店，傍晚自由活动调整状态。 孩子可在车上睡觉或看沿途风景。</div>
         <div class="day-rhythm">中等偏轻 | 2处远观 | 木塔平地看+悬空寺不登</div>
       </div>
 
-      <div class="day-card reveal reveal-up stagger-4">
+      <div class="day-card reveal reveal-up stagger-4" id="day-4">
         <div class="day-tag yellow">D4 · 7月31日 周五</div>
         <div class="day-title">晋祠深度日 + 跨城转场日</div>
         <div class="day-desc">上午游览晋祠博物馆（约2小时），看圣母殿宋代彩塑、鱼沼飞梁、难老泉，感受三晋文脉。晋祠是中国古代园林与建筑艺术的瑰宝，亭台楼榭与古树清泉相映。 孩子可以看千年古树和古建细节，讲解以故事方式带入。 专车跨城接送，前往下一目的地。途中安排服务区休息，抵达后入住酒店，傍晚自由活动调整状态。 孩子可在车上睡觉或看沿途风景。</div>
         <div class="day-rhythm">轻松级 | 园林+古建 | 室内外结合</div>
       </div>
 
-      <div class="day-card reveal reveal-up stagger-1">
+      <div class="day-card reveal reveal-up stagger-1" id="day-5">
         <div class="day-tag yellow">D5 · 8月1日 周六</div>
         <div class="day-title">八泉峡自然日</div>
         <div class="day-desc">全天游览八泉峡（约5小时），乘船穿行峡谷碧水，体验天空之城电梯与高空索道，俯瞰太行山大峡谷的壮美。八泉峡是太行山水的精华，被誉为「太行第一雄峡」。 孩子会对峡谷游船和高空索道非常兴奋，是很好的自然探索。</div>
         <div class="day-rhythm">中等 | 船游+索道+电梯 | 峡谷自然</div>
       </div>
 
-      <div class="day-card reveal reveal-up stagger-2">
+      <div class="day-card reveal reveal-up stagger-2" id="day-6">
         <div class="day-tag green">D6 · 8月2日 周日</div>
         <div class="day-title">虹霓村古村落日 + 送站日</div>
         <div class="day-desc">上午探访虹霓村（约2小时），太行山深处的千年石头古村，依山而建的石板房、千年银杏、飞瀑流泉，是原生态的太行山居画卷。 孩子可以在溪边玩水、看古村石屋，像走进童话世界。 安全送站，根据返程交通时间从容安排。</div>
