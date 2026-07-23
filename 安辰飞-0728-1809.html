@@ -794,6 +794,50 @@
     .transition-title { font-size: 20px; letter-spacing: 2px; }
     .cost-table thead th, .cost-table tbody td { padding: 14px 12px; font-size: 12px; }
   }
+
+  /* ===== PRINT / PDF 优化（仅打印介质生效，不影响网页版）===== */
+  @media print {
+    * { animation: none !important; transition: none !important; }
+    html, body { scroll-behavior: auto !important; background: #fffdf8 !important; }
+    /* 去掉纸张噪点固定层 */
+    body::before { display: none !important; }
+
+    /* 强制所有 JS 滚动揭示内容可见（PDF 不执行 JS，否则永远 opacity:0） */
+    .reveal, [class*="reveal"],
+    .letter-sign, .letter-sign-text, .breath-text,
+    .transition-content, .transition-line, .transition-title,
+    .transition-hint, .transition-arrow,
+    .cover-content, .cover-title, .cover-meta, .cover-line, .cover-brand,
+    .think-card, .day-card, .opt-item-card, .cost-table, .client-desc {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* 取消整屏 100vh，改为自适应高度，避免每章占满一整页留大片空白 */
+    .cover, .breath-page, .transition-page,
+    section, .section,
+    [class$="section"], [class$="page"] {
+      height: auto !important;
+      min-height: 0 !important;
+    }
+
+    /* 隐藏纯装饰（漂浮粒子、滚动提示、过渡箭头等） */
+    .particles, .scroll-hint, .scroll-arrow,
+    .transition-hint, .transition-arrow,
+    [class*="float"] {
+      display: none !important;
+    }
+
+    /* 避免卡片/表格在页中割裂 */
+    .day-card, .think-card, .opt-item-card, .cost-table,
+    table, tr, .adjust-list li, .check-list li {
+      page-break-inside: avoid;
+    }
+
+    img { max-width: 100% !important; height: auto !important; }
+
+    @page { size: A4; margin: 12mm; }
+  }
 </style>
 </head>
 <body>
