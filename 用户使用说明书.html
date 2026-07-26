@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>慢旅报价师 · 使用手册</title>
+<style>
+  :root {
+    --bg: #fafaf6;
+    --card: #ffffff;
+    --text: #2c2c2a;
+    --muted: #5f5e5a;
+    --border: #e8e6dc;
+    --blue: #185fa5;
+    --blue-bg: #e6f1fb;
+    --green: #3b6d11;
+    --green-bg: #eaf3de;
+    --coral: #993c1d;
+    --coral-bg: #faece7;
+    --amber: #854f0b;
+    --amber-bg: #faeeda;
+    --radius: 10px;
+    --font: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 40px 20px 80px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+  }
+  header h1 { font-size: 26px; font-weight: 600; margin-bottom: 6px; }
+  header p { color: var(--muted); font-size: 14px; }
+  h2 {
+    font-size: 19px; font-weight: 600; margin: 40px 0 16px;
+    padding-left: 12px; border-left: 3px solid var(--blue);
+  }
+  h3 { font-size: 15px; font-weight: 600; margin: 24px 0 10px; }
+  p { margin: 8px 0; font-size: 14px; }
+  .step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .step-num {
+    display: inline-block;
+    width: 26px; height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px; font-weight: 600;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .step h3 { display: inline; margin: 0; vertical-align: middle; font-size: 16px; }
+  .step p { margin-top: 10px; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 12px 0;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left; padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th { font-weight: 600; color: var(--muted); font-size: 12px; white-space: nowrap; }
+  td code, p code {
+    background: var(--blue-bg);
+    color: var(--blue);
+    padding: 1px 6px; border-radius: 4px;
+    font-size: 13px; font-family: "SF Mono", "Fira Code", monospace;
+  }
+  .tip {
+    background: var(--amber-bg);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .flow-svg {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin: 20px 0;
+    overflow-x: auto;
+  }
+  .flow-svg svg { max-width: 100%; height: auto; }
+  footer {
+    text-align: center; color: var(--muted);
+    font-size: 12px; margin-top: 48px; padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>慢旅报价师 · 使用手册</h1>
+  <p>三步搞定大同高端家庭定制行程与报价 &mdash; 从客户需求到 PDF+杂志</p>
+</header>
+
+<h2>整体流程</h2>
+
+<div class="flow-svg">
+<svg viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="15" y="45" width="110" height="44" rx="10" fill="#e6f1fb" stroke="#85b7eb" stroke-width="0.8"/>
+  <text x="70" y="67" text-anchor="middle" fill="#185fa5" font-size="13" font-weight="600" dominant-baseline="central">用户触发</text>
+
+  <line x1="125" y1="67" x2="155" y2="67" stroke="#888780" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="157" y="45" width="130" height="44" rx="10" fill="#e6f1fb" stroke="#85b7eb" stroke-width="0.8"/>
+  <text x="222" y="67" text-anchor="middle" fill="#185fa5" font-size="13" font-weight="600" dominant-baseline="central">对话补全信息</text>
+
+  <line x1="287" y1="67" x2="317" y2="67" stroke="#888780" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="319" y="45" width="130" height="44" rx="10" fill="#e6f1fb" stroke="#85b7eb" stroke-width="0.8"/>
+  <text x="384" y="67" text-anchor="middle" fill="#185fa5" font-size="13" font-weight="600" dominant-baseline="central">处方卡确认</text>
+
+  <line x1="449" y1="67" x2="479" y2="67" stroke="#888780" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="481" y="45" width="130" height="44" rx="10" fill="#eaf3de" stroke="#97c459" stroke-width="0.8"/>
+  <text x="546" y="67" text-anchor="middle" fill="#3b6d11" font-size="13" font-weight="600" dominant-baseline="central">草稿审阅</text>
+
+  <polygon points="546,150 626,200 546,250 466,200" fill="#faeeda" stroke="#ef9f27" stroke-width="0.8"/>
+  <text x="546" y="199" text-anchor="middle" fill="#854f0b" font-size="13" font-weight="600" dominant-baseline="central">没问题?</text>
+
+  <line x1="546" y1="89" x2="546" y2="150" stroke="#888780" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <line x1="487" y1="225" x2="140" y2="225" stroke="#888780" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#a)"/>
+
+  <rect x="30" y="205" width="110" height="40" rx="10" fill="#faece7" stroke="#f0997b" stroke-width="0.8"/>
+  <text x="85" y="225" text-anchor="middle" fill="#993c1d" font-size="13" font-weight="600" dominant-baseline="central">群聊直接修订</text>
+
+  <line x1="606" y1="200" x2="640" y2="200" stroke="#888780" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="570" y="140" width="100" height="44" rx="10" fill="#eaf3de" stroke="#97c459" stroke-width="0.8"/>
+  <text x="620" y="162" text-anchor="middle" fill="#3b6d11" font-size="13" font-weight="600" dominant-baseline="central">回复"定稿"</text>
+
+  <rect x="570" y="260" width="100" height="44" rx="10" fill="#eaf3de" stroke="#97c459" stroke-width="0.8"/>
+  <text x="620" y="278" text-anchor="middle" fill="#3b6d11" font-size="12" font-weight="600" dominant-baseline="central" style="dominant-baseline:central">PDF</text>
+  <text x="620" y="294" text-anchor="middle" fill="#3b6d11" font-size="12" font-weight="600" dominant-baseline="central">杂志</text>
+
+  <line x1="620" y1="184" x2="620" y2="260" stroke="#888780" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <text x="340" y="296" text-anchor="end" fill="#5f5e5a" font-size="11">修订后自动重算、更新草稿文档</text>
+</svg>
+</div>
+
+<h2>第一步：发起</h2>
+
+<div class="step">
+  <span class="step-num">1</span><h3>一句话说出客户情况</h3>
+  <p>在群里直接发，机器人数到核心字段就会开始追问缺的信息。</p>
+  <p>示例：<code>飞机 4大人2孩子 8月15日 北京出发 4天 自驾 预算6000</code></p>
+</div>
+
+<div class="step">
+  <span class="step-num">2</span><h3>回答追问</h3>
+  <p>机器人逐项问（老人情况、孩子年龄、房间数量&middot;档次等），每次回复即可。</p>
+  <table>
+    <tr><th>机器人问</th><th>你答（举例）</th></tr>
+    <tr><td>老人情况</td><td><code>无</code> 或 <code>2老人 膝盖不好</code></td></tr>
+    <tr><td>孩子情况</td><td><code>年龄8，14 喜欢画画</code></td></tr>
+    <tr><td>房间需求</td><td><code>2间 双床</code> 或 <code>不需要住宿</code></td></tr>
+    <tr><td>酒店档次</td><td><code>轻奢</code></td></tr>
+  </table>
+  <p>不想答某项说 <code>0</code> / <code>随便</code> / <code>不需要</code> 就行，系统自动填默认值。</p>
+</div>
+
+<h2>第二步：处方卡</h2>
+
+<div class="step">
+  <span class="step-num">3</span><h3>查看处方卡</h3>
+  <p>信息收集齐全后，机器人发一张处方卡到群里，包含所有字段。你可以直接编辑后重新发回。</p>
+  <p><strong>重点字段：</strong></p>
+  <table>
+    <tr><th>编号</th><th>字段</th><th>用途</th><th>不填的默认</th></tr>
+    <tr><td>11</td><td>想看景点</td><td>客户想去的，引擎强行加入行程</td><td>无</td></tr>
+    <tr><td>12</td><td>不想去</td><td>不想去的景点/活动，引擎排除</td><td>无</td></tr>
+    <tr><td>13</td><td>忌讳</td><td>饮食/文化避讳，存客户画像</td><td>无</td></tr>
+    <tr><td>14</td><td>自选加购</td><td>客户主动要的自选项</td><td>无</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <span class="step-num">4</span><h3>确认基本信息</h3>
+  <p>处方发回后，弹一张确认卡核实来源、语言、沟通方式、经营分摊、领队。直接回复：</p>
+  <table>
+    <tr><th>回复</th><th>效果</th></tr>
+    <tr><td><code>确认</code></td><td>全部采用默认（要领队 + 不含经营分摊）</td></tr>
+    <tr><td><code>不需要领队 含</code></td><td>不要领队 + 计入经营分摊</td></tr>
+    <tr><td><code>不需要</code></td><td>只要"不需要"两个字，就是不要领队</td></tr>
+  </table>
+</div>
+
+<h2>第三步：草稿 &rarr; 定稿</h2>
+
+<div class="step">
+  <span class="step-num">5</span><h3>审阅在线文档</h3>
+  <p>确认后 1-2 分钟，群内收到 <strong>飞书在线文档</strong> 链接。打开看完整行程、报价明细。</p>
+</div>
+
+<div class="step">
+  <span class="step-num">6</span><h3>有问题直接在群里改</h3>
+  <p>不用重填处方，直接说怎么改：</p>
+  <table>
+    <tr><th>说这个</th><th>效果</th></tr>
+    <tr><td><code>不含</code></td><td>去掉经营分摊</td></tr>
+    <tr><td><code>含</code></td><td>加回经营分摊</td></tr>
+    <tr><td><code>加自选云冈专家讲解</code></td><td>添加自选项目</td></tr>
+    <tr><td><code>不要悬空寺</code></td><td>从行程中排除悬空寺</td></tr>
+    <tr><td><code>改预算8000</code></td><td>调整人均预算</td></tr>
+    <tr><td><code>需要领队</code> / <code>不需要领队</code></td><td>切换领队</td></tr>
+    <tr><td><code>不吃猪肉</code> / <code>清真</code></td><td>记录忌讳</td></tr>
+  </table>
+  <p>每次修改后系统自动重算成本、更新文档链接。可以反复改。</p>
+</div>
+
+<div class="step">
+  <span class="step-num">7</span><h3>没问题就定稿</h3>
+  <p>满意后回复：</p>
+  <p><code>定稿</code> &emsp;或&emsp; <code>没问题</code></p>
+  <p>系统立刻输出：</p>
+  <table>
+    <tr><td>📥</td><td><strong>PDF 下载版</strong></td><td>适合转发生效，和在线文档在同一文件夹</td></tr>
+    <tr><td>🎁</td><td><strong>在线杂志</strong></td><td>精美翻阅链接，可分享给客户</td></tr>
+    <tr><td>📊</td><td><strong>客户档案</strong></td><td>自动写入多维表格，含杂志链接</td></tr>
+  </table>
+</div>
+
+<div class="tip">
+  <strong>备忘：</strong> 草稿阶段只出在线文档。PDF 和杂志在定稿后才生成<strong>——</strong>因为定稿前内容可能还会变，先确认再出最终版。
+</div>
+
+<footer>顺程慢旅 · 大同高端家庭定制 · 2026</footer>
+</body>
+</html>
